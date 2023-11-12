@@ -1,6 +1,5 @@
 package GroupTravel.Proyecto.PaqueteViaje;
 
-import java.sql.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,7 +14,7 @@ public class PaqueteViaje {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id_paquete;
     private long id_destino;
-    private Date fecha_viaje;
+    private String fecha_viaje;
     private String itinerario;
-    private double precio;
+    private String precio;
 }

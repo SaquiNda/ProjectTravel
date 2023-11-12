@@ -1,7 +1,5 @@
 package GroupTravel.Proyecto.Reserva;
 
-import java.sql.Date;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,5 +15,5 @@ public class Reserva {
     private long id_cliente;
     private long id_paquete;
     private long id_hotel;
-    private Date fecha_reserva;
+    private String fecha_reserva;
 }
