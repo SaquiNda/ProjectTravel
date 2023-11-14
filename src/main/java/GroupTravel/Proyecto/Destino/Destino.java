@@ -12,8 +12,8 @@ public class Destino {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id_destino;
-    private String nombre;
-    private String descripcion;
+    private String name;
+    private String description;
     private byte image;
     private String tarifa;
 }
