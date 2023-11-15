@@ -6,7 +6,10 @@ services:
     environment:
       - SPRING_PROFILES_ACTIVE=prod
     ports:
-      - target:8081 published:8081 protocol:tcp mode:host
+      - target:8081 
+        published:8081
+        protocol:tcp 
+        mode:host
     networks:
       - proyecto_integrador_net
     mydatabase:
