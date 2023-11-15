@@ -1,5 +1,5 @@
-# Usa una imagen base con Java 11
-FROM adoptopenjdk:11-jre-hotspot
+# Usa una imagen base con Java 17
+FROM adoptopenjdk:17-jre-hotspot
 
 # Copia el archivo JAR de la aplicación a la imagen
 COPY Proyecto-0.0.1-SNAPSHOT.jar ./grouptravel.jar
