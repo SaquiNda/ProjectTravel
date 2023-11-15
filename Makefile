@@ -1,5 +1,5 @@
 buid-image:
-	@ docker build -f devops/Dockerfile -t groupTravelPI:1 . 
+	@ docker build -f devops/Dockerfile -t grouptravel:1 . 
 volume: 
 	@ docker volume create pg_proyecto_grouptravel_data
 deploy:

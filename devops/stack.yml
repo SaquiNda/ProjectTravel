@@ -9,7 +9,7 @@ services:
       - target:8081 published:8081 protocol:tcp mode:host
     networks:
       - proyecto_integrador_net
-    dbclasses:
+    mydatabase:
       image: postgres:15-bullseye
       environment:
         - T2=America/Guayaquil
