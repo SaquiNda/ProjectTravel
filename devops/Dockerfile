@@ -1,7 +1,11 @@
-FROM debian:11
+# Usa una imagen base con Java 11
+FROM adoptopenjdk:11-jre-hotspot
 
-RUN apt update && apt install -y openjdk-17-jre
+# Copia el archivo JAR de la aplicación a la imagen
+COPY Proyecto-0.0.1-SNAPSHOT.jar /grouptravel.jar
 
-COPY Proyecto-0.0.1-SNAPSHOT.jar ./travelgroup.jar
+# Expone el puerto en el que la aplicación se ejecutará
+EXPOSE 8081
 
-CMD ["java", "-jar", "travelgroup.jar"]
+# Comando para ejecutar la aplicación al iniciar el contenedor
+CMD ["java", "-jar", "/grouptravel.jar"]

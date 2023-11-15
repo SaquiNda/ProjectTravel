@@ -1,0 +1,39 @@
+version: '3.0'
+
+services:
+  backend:
+    image: 'grouptravel:2'
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+    ports:
+      - target: 8081
+        published: 8081
+        protocol: tcp
+        mode: host
+    networks:
+      - proyecto_integrador_net
+
+  mydatabase:
+    image: postgres:15-bullseye
+    environment:
+      - TZ=America/Guayaquil
+      - POSTGRES_DB=grouptravel
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - PGDATA=/var/lib/postgresql/data/pgadata
+    volumes:
+      - pg_proyecto_grouptravel_data:/var/lib/postgresql/data/pgadata
+    networks:
+      - proyecto_integrador_net
+
+volumes: 
+  pg_proyecto_grouptravel_data:
+    external: true
+
+secrets:
+  db_dev_pass:
+    external: true
+
+networks:
+  proyecto_integrador_net:
+    driver: bridge
