@@ -1,11 +1,7 @@
-# Usa una imagen base con Java 17
-FROM openjdk:17-jre
+FROM debian:11
 
-# Copia el archivo JAR de la aplicación a la imagen
-COPY Proyecto-0.0.1-SNAPSHOT.jar ./grouptravel.jar
+RUN apt update && apt install -y openjdk-17-jre
 
-# Expone el puerto en el que la aplicación se ejecutará
-EXPOSE 8081
+COPY instituto.core-0.0.1-SNAPSHOT.jar ./grouptravel.jar
 
-# Comando para ejecutar la aplicación al iniciar el contenedor
-CMD ["java", "-jar", "/grouptravel.jar"]
+CMD ["java", "-jar", "grouptravel.jar"]
