@@ -2,7 +2,7 @@ version: '3.0'
 
 services:
   backend:
-    image: 'proyecto-backend:1'
+    image: 'grouptravel:1'
     environment:
       - SPRING_PROFILES_ACTIVE=prod
     ports:
