@@ -2,7 +2,7 @@
 FROM adoptopenjdk:11-jre-hotspot
 
 # Copia el archivo JAR de la aplicación a la imagen
-COPY Proyecto-0.0.1-SNAPSHOT.jar /grouptravel.jar
+COPY Proyecto-0.0.1-SNAPSHOT.jar ./grouptravel.jar
 
 # Expone el puerto en el que la aplicación se ejecutará
 EXPOSE 8081
