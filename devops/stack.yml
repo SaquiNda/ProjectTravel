@@ -6,8 +6,8 @@ services:
     environment:
       - SPRING_PROFILES_ACTIVE=prod
     ports:
-      - target: 8081
-        published: 8081
+      - target: '8081'
+        published: '8081'
         protocol: tcp
         mode: host
     networks:
