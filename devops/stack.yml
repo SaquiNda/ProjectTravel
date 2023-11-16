@@ -6,10 +6,7 @@ services:
     environment:
       - SPRING_PROFILES_ACTIVE=prod
     ports:
-      - target: '8081'
-        published: '8081'
-        protocol: tcp
-        mode: host
+      - "8081:8081"
     networks:
       - group_travel_net
 
