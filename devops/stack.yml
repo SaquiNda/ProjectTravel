@@ -2,7 +2,7 @@ version: '3.0'
 
 services:
   backend:
-    image: 'grouptravel:2'
+    image: 'grouptravel:1'
     environment:
       - SPRING_PROFILES_ACTIVE=prod
     ports:
@@ -11,7 +11,7 @@ services:
         protocol: tcp
         mode: host
     networks:
-      - proyecto_integrador_net
+      - group_travel_net
 
   mydatabase:
     image: postgres:15-bullseye
@@ -24,16 +24,17 @@ services:
     volumes:
       - pg_proyecto_grouptravel_data:/var/lib/postgresql/data/pgadata
     networks:
-      - proyecto_integrador_net
+      - group_travel_net
 
 volumes: 
   pg_proyecto_grouptravel_data:
+    external: true
+
+networks:
+  group_travel_net:
     external: true
 
 secrets:
   db_dev_pass:
     external: true
 
-networks:
-  proyecto_integrador_net:
-    driver: bridge
